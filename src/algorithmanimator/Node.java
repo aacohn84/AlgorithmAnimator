@@ -16,18 +16,20 @@ public class Node
     //Fields
     public float x, y;
     public int value;
+    public int index;
     
-    public Node(int value)
+    public Node(int value, int index)
     {
         this.value = value;
+        this.index = index;
     }
     
     public void render(Graphics g)
     {
-        int size = 100;
+        int size = 50;
         
         g.setColor(Color.BLUE);
-        g.fillRect((int)x, (int)y, 100, 100);
+        g.fillRect((int)x, (int)y, size, size);
         
         //Paint value
         g.setColor(Color.WHITE);
