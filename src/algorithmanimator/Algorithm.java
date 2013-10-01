@@ -19,7 +19,7 @@ public abstract class Algorithm
 {
     //Fields
     protected Node[] arr;
-    private Graphics g;
+    protected Graphics g;
     
     //Double buffer
     protected Image buffer = new BufferedImage(AlgorithmAnimator.width, AlgorithmAnimator.height, BufferedImage.TYPE_INT_ARGB);
