@@ -25,16 +25,15 @@ public class AlgorithmAnimator extends javax.swing.JFrame
     
     public AlgorithmAnimator() 
     {
+        setUndecorated(true);
         initComponents();
         setSize(width, height);
         
         Graphics g = getGraphics();
-        algName = "heapsort";
-        switch(algName.toLowerCase())
+        algName = "quicksort";
+        switch(algName)
         {
-            case "bubblesort": algorithm = new Bubblesort(g); break;
             case "quicksort": algorithm = new Quicksort(g); break;
-            case "heapsort": algorithm = new HeapSortAlgorithm(g); break;
             default: algorithm = new Bubblesort(g); break;
         }
     }
@@ -42,9 +41,15 @@ public class AlgorithmAnimator extends javax.swing.JFrame
     @Override
     public void paint(Graphics g) 
     {
-        System.out.println("Sorting...");
+        System.out.println("sorting");
+//        algorithm.arr = new Node[5];
+//        algorithm.arr[0] = new Node(7,0);
+//        algorithm.arr[1] = new Node(3,1);
+//        algorithm.arr[2] = new Node(6,2);
+//        algorithm.arr[3] = new Node(1,3);
+//        algorithm.arr[4] = new Node(1,4);
+        algorithm.scramble();
         algorithm.sort();
-        System.out.println("Done sorting");
     }
 
     /**

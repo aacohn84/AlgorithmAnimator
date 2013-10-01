@@ -6,8 +6,6 @@ package algorithmanimator;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -23,7 +21,7 @@ public class Bubblesort extends Algorithm
     }
 
     @Override
-    public void sort() 
+    public void sort()
     {
         //do logic
         //call animate
@@ -39,19 +37,8 @@ public class Bubblesort extends Algorithm
     {
         //manipulates the list of nodes
         //and each node's x, y values
-        canvas.setColor(Color.GRAY);
-        canvas.fillRect(0, 0, AlgorithmAnimator.getInstance().getWidth(), AlgorithmAnimator.getInstance().getHeight());
         canvas.setColor(Color.yellow);
         canvas.fillRect(x, x++, 100, 100);
-        
-        //Commit buffer
-        g.drawImage(buffer, 0, 0, null);
-        
-        try {
-            Thread.sleep(10);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(Bubblesort.class.getName()).log(Level.SEVERE, null, ex);
-        }
     }
 
     
