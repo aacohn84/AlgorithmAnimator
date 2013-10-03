@@ -12,21 +12,14 @@ import java.awt.Graphics;
  */
 public class HeapSortAlgorithm extends Algorithm {
 
-    private final int arrSize = 7;
+    private final int arrSize = 10;
     
     public HeapSortAlgorithm(Graphics g) {
         super(g);
         arr = new Node[arrSize];
-//        for (int i = 0; i < arrSize; i++) {
-//            arr[i] = new Node((int) (Math.random() * 100));
-//        }
-        arr[0] = new Node(40);
-        arr[1] = new Node(15);
-        arr[2] = new Node(5);
-        arr[3] = new Node(77);
-        arr[4] = new Node(51);
-        arr[5] = new Node(90);
-        arr[6] = new Node(16);
+        for (int i = 0; i < arrSize; i++) {
+            arr[i] = new Node((int) (Math.random() * 100), i);
+        }
         printArr();
     }
     
