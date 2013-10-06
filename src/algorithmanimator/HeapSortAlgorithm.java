@@ -16,20 +16,43 @@ public class HeapSortAlgorithm extends Algorithm {
     
     public HeapSortAlgorithm(Graphics g) {
         super(g);
-        arr = new Node[arrSize];
-        for (int i = 0; i < arrSize; i++) {
-            arr[i] = new Node((int) (Math.random() * 100), i);
-        }
-        printArr();
+        //printArr();
     }
     
     @Override
     public void sort() {
+        render();
         heapSort();
     }
 
     @Override
     protected void animate() {
+        float nodeSpacing = AlgorithmAnimator.width/(float)arr.length;
+        
+        float[] dists = new float[arr.length];
+        
+        System.out.println(AlgorithmAnimator.width + ":" + arr.length);
+        for(int i = 0; i < 10; i++)
+        {
+            clearCanvas();
+            for(Node n : arr)
+            {
+                int targetX = (int) (n.index*nodeSpacing);
+                float step = (targetX - n.x)/10f;
+                n.x += step;
+                n.render(canvas);
+            }
+            commitCanvas();
+            pause(50);
+        }
+        clearCanvas();
+        for(Node n : arr)
+        {
+            int targetX = (int) (n.index*nodeSpacing);
+            n.x = targetX;
+            n.render(canvas);
+        }
+        commitCanvas();
     }
     
     private void printArr() {
@@ -45,11 +68,11 @@ public class HeapSortAlgorithm extends Algorithm {
     }
     
     public int left(int i) {
-        return 2 * i;
+        return 2*i;
     }
     
     public int right(int i) {
-        return 2 * i + 1;
+        return 2*i + 1;
     }
     
     private int heapSize = 0;
@@ -73,6 +96,9 @@ public class HeapSortAlgorithm extends Algorithm {
         Node temp = a[i-1];
         a[i-1] = a[j-1];
         a[j-1] = temp;
+        a[i-1].index = i-1;
+        a[j-1].index = j-1;
+        render();
     }
     
     public void buildHeap() {
