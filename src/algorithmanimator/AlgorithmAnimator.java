@@ -13,7 +13,7 @@ import java.awt.Graphics;
 public class AlgorithmAnimator extends javax.swing.JFrame 
 {
     //Settings
-    public static int width = 800;
+    public static int width = 900;
     public static int height = 600;
     
     //Fields
