@@ -30,10 +30,12 @@ public class AlgorithmAnimator extends javax.swing.JFrame
         setSize(width, height);
         
         Graphics g = getGraphics();
-        algName = "quicksort";
+        algName = "heapsort";
         switch(algName)
         {
             case "quicksort": algorithm = new Quicksort(g); break;
+            case "bubblesort": algorithm = new Bubblesort(g); break;
+            case "heapsort": algorithm = new HeapSortAlgorithm(g); break;
             default: algorithm = new Bubblesort(g); break;
         }
     }

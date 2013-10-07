@@ -37,7 +37,7 @@ public abstract class Algorithm
         try {
             Thread.sleep(10);
         } catch (InterruptedException ex) {
-            Logger.getLogger(Bubblesort.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
         }
     }
     
